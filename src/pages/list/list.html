@@ -49,30 +49,13 @@
   </ion-list>
 
   <ion-list *ngSwitchCase="'done'">
-      <ion-item>
-        <ion-thumbnail item-left>
-          <img src="assets/img/thumbnail-kitten-1.jpg">
-        </ion-thumbnail>
-        <h2>Luna</h2>
-      </ion-item>
-      <ion-item>
-        <ion-thumbnail item-left>
-          <img src="assets/img/thumbnail-kitten-3.jpg">
-        </ion-thumbnail>
-        <h2>Milo</h2>
-      </ion-item>
-      <ion-item>
-        <ion-thumbnail item-left>
-          <img src="assets/img/thumbnail-kitten-4.jpg">
-        </ion-thumbnail>
-        <h2>Bandit</h2>
-      </ion-item>
-      <ion-item>
-        <ion-thumbnail item-left>
-          <img src="assets/img/thumbnail-kitten-2.jpg">
-        </ion-thumbnail>
-        <h2>Nala</h2>
-      </ion-item>
+    <ion-item *ngFor="let data of yayasan" (click)="itemTapped(data)">
+        <ion-avatar item-left>
+          <!-- <img src="{{ item.imgpath }}"> -->
+        </ion-avatar>
+        <h2>{{ data.nama_barang }}</h2>
+        <p>{{ data.jenis_barang }}</p>
+        </ion-item>
     </ion-list>
 
   <!-- End of List Code -->

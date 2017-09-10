@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 import { SumbanganPage } from '../sumbangan/sumbangan';
+import {PetaPage} from '../peta/peta';
 
 
 
@@ -22,7 +23,7 @@ export class DetailPage {
 	donatur: string;
 	penerima: string;
 
-  constructor(public navCtrl: NavController, 
+  constructor(public navCtrl: NavController,
   			  public navParams: NavParams,
   			  public alerCtrl: AlertController,
   			  private fire: AngularFireAuth,
@@ -56,6 +57,10 @@ export class DetailPage {
  	 	// .update({donatur:1})
 
  	 	// this.doAlert();
+  }
+
+  loadMap(){
+    this.navCtrl.push(PetaPage);
   }
 
 }

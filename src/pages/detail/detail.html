@@ -19,25 +19,32 @@
       <p>
         {{item.alamat}}
       </p>
+      <p>
+        {{item.email}}
+      </p>
+      <p>
+          {{item.hp}}
+      </p>
     </ion-card-content>
 
     <ion-row no-padding>
       <ion-col>
         <button ion-button clear small color="danger" icon-start>
           <!-- <ion-icon name='star'></ion-icon> -->
-          {{item.email}}
+
         </button>
       </ion-col>
       <ion-col text-center>
-        <button ion-button clear small color="danger" icon-start>
-          <!-- <ion-icon name='musical-notes'></ion-icon> -->
-          {{item.hp}}
+        <button ion-button clear small color="danger" icon-start (click)="loadMap()">
+          <ion-icon name='map'></ion-icon>
+          Cek Peta
         </button>
+
       </ion-col>
       <ion-col text-right>
         <button ion-button clear small color="danger" icon-start>
-          <ion-icon name='share-alt'></ion-icon>
-          Share
+          <!-- <ion-icon name='musical-notes'></ion-icon> -->
+
         </button>
       </ion-col>
     </ion-row>

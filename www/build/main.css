@@ -25514,6 +25514,15 @@ page-peminat .back-button {
   color: #fff !important;
 }
 
+page-peta .scroll {
+  height: 100%;
+}
+
+page-peta #map {
+  width: 100%;
+  height: 100%;
+}
+
 page-profil ion-card img {
   display: block;
   width: 40vw;
