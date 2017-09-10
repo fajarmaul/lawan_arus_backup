@@ -18,6 +18,7 @@ import { MainPage } from '../main/main';
   templateUrl: 'profil-yayasan.html',
 })
 export class ProfilYayasanPage {
+	image: string;
 	namaYayasan: string;
 	namaPemilik: string;
 	nomorPonsel: number;
@@ -35,13 +36,18 @@ export class ProfilYayasanPage {
   			) {
   			var user = this.fire.auth.currentUser;
   			const donatur = this.firedata.object('/data_yayasan/'+user.uid).subscribe(data =>{
+					this.image = data.image;
   				this.namaYayasan = data.namaYayasan;
   				this.email = data.email;
   				this.alamat = data.alamat;
 					this.nomorPonsel = data.noHp;
 					this.namaPemilik = data.namaPemilik;
 					this.provinsi = data.provinsi;
-  			})
+					console.log(data.image);
+					console.log(this.image);
+					
+				})
+				console.log(this.image);
   }
 
   ionViewDidLoad() {
