@@ -12,9 +12,8 @@ import { YayasanPostPage } from '../yayasan-post/yayasan-post';
 export class TabsYayasanPage {
 
   tab1Root = Home1Page;
-  tab2Root = YayasanPostPage;
-  tab3Root = HistoryPage;
-  tab4Root = ProfilYayasanPage;
+  tab2Root = HistoryPage;
+  tab3Root = ProfilYayasanPage;
 
   constructor() {
 

@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { Http } from '@angular/http';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireAuth } from 'angularfire2/auth';
+
 
 // Import pages to allow links to the page
 // import { SingleItem } from '../../pages/single-item/single-item';
-//import { PeminatPage } from '../../pages/peminat/peminat';
 import { Detail1Page } from '../../pages/detail1/detail1';
+
 
 // Service import for items
 import { ItemApi } from '../../services/service';
@@ -14,23 +17,43 @@ import { ItemApi } from '../../services/service';
 // The Http provider is included to make the API call to the service.
 @Component({
   selector: 'page-history',
-  templateUrl: 'history.html',
-  providers: [Http]
+  templateUrl: 'history.html'
 })
 
 // The generic export class is created with the page name.
 export class HistoryPage {
 
   // The items array to populate with data is created
-  items: any;
+  yayasan: any;
+  list: any;
+  pet:string;
 
   // The navController and the ItemApi Service is injected into the constructor
   constructor(
               public navCtrl: NavController,
               public params:NavParams,
               private itemApi: ItemApi,
-              public loadingController: LoadingController
-            ) {}
+              public loadingController: LoadingController,
+              private fire: AngularFireAuth,
+              private firedata: AngularFireDatabase,              
+            ) {
+    this.pet = "progress";
+    this.list=[];
+
+    var user = this.fire.auth.currentUser;
+    console.log(user.uid);
+    this.firedata.list('/post_donatur/').subscribe(data =>{
+        for(var i=0, j=0; i<data.length;i++){
+          if(data[i].penerima == user.uid){
+            this.list[j] = data[i];
+            j++;
+          }
+        }
+        // this.yayasan = data;
+
+    });
+
+  }
 
   // ------------------------------------------------------------------------------------------
   // FUNCTIONS
@@ -39,56 +62,15 @@ export class HistoryPage {
   // This is where the data loads from the service.
   // It happens when the view loads for the first time.
   ionViewDidLoad() {
-
-    let loader = this.loadingController.create({
-      content: "Getting items.."
-    });
-    loader.present();
-
-    this.itemApi.getItems().then(data => {
-        loader.dismiss();
-        this.items = data
-    });
-  }
-
-  // The getItems function is called everytime the searchbar input changes
-  getItems(searchbar) {
-
-    // set q to the value of the searchbar
-    var q = searchbar.srcElement.value;
-
-    // if the value is an empty string don't filter the items
-    if (!q) {
-
-      // Show loader when search is cancelled
-      let loader = this.loadingController.create({
-        content: "Getting items.."
-      });
-      loader.present();
-
-      // fetch the data and dismiss loader
-      this.itemApi.getItems().then(data => {
-        loader.dismiss();
-        this.items = data
-      });
-    }
-
-    this.items = this.items.filter((v) => {
-      if(v.title && q) {
-        if (v.title.toLowerCase().indexOf(q.toLowerCase()) > -1) {
-          return true;
-        }
-        return false;
-      }
-    });
+        console.log('ionViewDidLoad ListPage');
   }
   // End of Searchbar Code
 
 
   // This function is an event to listen to clicks on elements.
   // The SingleItem Page has been included to be passed in this function.
-  itemTapped($event, item) {
-    this.navCtrl.push(Detail1Page);
+  itemTapped(data) {
+    this.navCtrl.push(Detail1Page, data);
   }
 
 }

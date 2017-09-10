@@ -1,10 +1,11 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-    	Sumbangin
+      Sumbangin
     </ion-title>
   </ion-navbar>
 </ion-header>
+
 <ion-content class="cards-bg">
 
   <ion-card>
@@ -13,38 +14,45 @@
 
     <ion-card-content>
       <ion-card-title>
-        Yayasan Sehat Selalu
+        {{item.nama_barang}}
       </ion-card-title>
       <p>
-        Merupakan sebuah yayasan yang sangat sehat selalu dan blablablablablabla....
+        {{item.keterangan}}
+      </p>
+      <p>
+        {{item.volume_barang}}
+      </p>
+      <p>
+          {{item.user}}
       </p>
     </ion-card-content>
 
     <ion-row no-padding>
       <ion-col>
         <button ion-button clear small color="danger" icon-start>
-          <ion-icon name='star'></ion-icon>
-          Favorite
+          <!-- <ion-icon name='star'></ion-icon> -->
+
         </button>
       </ion-col>
       <ion-col text-center>
-        <button ion-button clear small color="danger" icon-start>
-          <ion-icon name='musical-notes'></ion-icon>
-          Listen
+        <button ion-button clear small color="danger" icon-start (click)="loadMap()">
+          <ion-icon name='map'></ion-icon>
+          Cek Peta
         </button>
+
       </ion-col>
       <ion-col text-right>
         <button ion-button clear small color="danger" icon-start>
-          <ion-icon name='share-alt'></ion-icon>
-          Share
+          <!-- <ion-icon name='musical-notes'></ion-icon> -->
+
         </button>
       </ion-col>
     </ion-row>
 
   </ion-card>
 
-     <div padding>
-    	<button ion-button color="secondary" block (click)='doRadio()'>Sumbangkan</button>
-  	</div>
+    <div padding>
+      <button ion-button color="secondary" block (click)='sumbang()'>Minta Sumbangan</button>
+    </div>
 
-</ion-content>	
+</ion-content>

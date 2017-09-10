@@ -1,9 +1,13 @@
-  
 <ion-header>
   <ion-navbar>
-    <ion-title>      
-          <h5>Sumbangin</h5>  
+    <ion-title>
+            <h5>Sumbangin</h5>
     </ion-title>
+                <ion-buttons end>
+                <button (click)="openModal()">
+                <ion-icon name="ios-notifications"></ion-icon>
+                </button>
+            </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -13,102 +17,48 @@
     <ion-slide>
       <ion-toolbar>
       </ion-toolbar>
-      	<img src="assets/img/backgrounds/img1.png" class="slide-image"/>
+        <img src="assets/img/backgrounds/img1.png" class="slide-image"/>
     
     </ion-slide>
 
     <ion-slide>
       <ion-toolbar>
       </ion-toolbar>
-      	<img src="assets/img/backgrounds/img2.png" class="slide-image"/>
+        <img src="assets/img/backgrounds/img2.png" class="slide-image"/>
     </ion-slide>
 
     <ion-slide>
       <ion-toolbar>
       </ion-toolbar>
-      	<img src="assets/img/backgrounds/img3.png" class="slide-image"/>
+        <img src="assets/img/backgrounds/img3.png" class="slide-image"/>
     </ion-slide>
   </ion-slides>
 
-  <ion-card>
+  <ion-card *ngFor="let data of yayasan" (click)="itemTapped(data)">
 
-  <ion-item>
+  <ion-item >
     <ion-avatar item-left>
       <img src="assets/img/logo-fix.png">
     </ion-avatar>
-    <h2>Butuh TV</h2>
-    <p>Sejak November 5, 1955</p>
+    <h2 style="font-weight: bold;"> {{data.nama_barang}} </h2>
+    <p> {{data.jenis_barang}} </p>
   </ion-item>
 
   <ion-card-content>
-    <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+    <p> {{data.keterangan}} </p>
   </ion-card-content>
 
   <ion-row>
     <ion-col>
     </ion-col>
       <ion-col align-self-center text-center>
-      <ion-note style="color: grey;">
-          5 unit
+      <ion-note>
+          {{data.volume_barang}}
       </ion-note>
     </ion-col>
   </ion-row>
 
 </ion-card>
-
-
- <ion-card>
-
-  <ion-item >
-    <ion-avatar item-left>
-      <img src="assets/img/logo-fix.png">
-    </ion-avatar>
-    <h2>Butuh Mobil</h2>
-    <p>Sejak November 5, 1955</p>
-  </ion-item>
-
-  <ion-card-content>
-    <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
-  </ion-card-content>
-
-  <ion-row>
-    <ion-col>
-    </ion-col>
-    <ion-col align-self-center text-center>
-      <ion-note style="color: grey">
-        4 unit
-      </ion-note>
-    </ion-col>
-  </ion-row>
-
-</ion-card>
-
- <ion-card>
-
-  <ion-item>
-    <ion-avatar item-left>
-      <img src="assets/img/logo-fix.png">
-    </ion-avatar>
-    <h2>Butuh Baju</h2>
-    <p>Sejak November 5, 1955</p>
-  </ion-item>
-
-  <ion-card-content>
-    <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
-  </ion-card-content>
-
-  <ion-row>
-    <ion-col>
-    </ion-col>
-    <ion-col align-self-center text-center>
-      <ion-note style="color: grey;">
-      2 unit
-      </ion-note>
-    </ion-col>
-  </ion-row>
-
-</ion-card>
-
 
 
   <ion-fab right bottom>

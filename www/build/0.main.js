@@ -78,7 +78,7 @@ var DetailYayasanPage = (function () {
 DetailYayasanPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* Component */])({
-        selector: 'page-detail-yayasan',template:/*ion-inline-start:"E:\PROJEK\Ionic\Gemastik10\Lawan-arus\src\pages\detail-yayasan\detail-yayasan.html"*/'<!--\n\n  Generated template for the DetailYayasanPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>detail-yayasan</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"E:\PROJEK\Ionic\Gemastik10\Lawan-arus\src\pages\detail-yayasan\detail-yayasan.html"*/,
+        selector: 'page-detail-yayasan',template:/*ion-inline-start:"D:\Lawan-arus\4\lawan_arus_backup\src\pages\detail-yayasan\detail-yayasan.html"*/'<!--\n\n  Generated template for the DetailYayasanPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>detail-yayasan</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"D:\Lawan-arus\4\lawan_arus_backup\src\pages\detail-yayasan\detail-yayasan.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], DetailYayasanPage);
