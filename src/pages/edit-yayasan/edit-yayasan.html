@@ -17,8 +17,15 @@
   
   <ion-content padding>
       <ion-card>
+
+
       <ion-card-content>
         <ion-card-title text-center>
+
+            <ion-item>
+                <button class="button1" text-center ion-button (click)="getPhotoFromGallery()"> Ubah Foto Profil </button>
+              </ion-item>  
+
         <ion-item>
           <ion-label stacked>Nama Pemilik</ion-label>
           <ion-input type="text" [(ngModel)]="namapemilik" name="nama" value="{{namapemilik}}"></ion-input>
@@ -42,10 +49,10 @@
         </ion-item>
 
        
-          <ion-item>
+          <!-- <ion-item>
             <button class="button1" text-center ion-button (click)="changeFoto()"> Ubah Foto Profil </button>
           </ion-item>     
-  
+   -->
        
   
         </ion-card-title>
